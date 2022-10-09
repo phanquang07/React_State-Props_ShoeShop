@@ -171,12 +171,12 @@ export default class ShoesStore extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-3">
+          <div className="col-3" style={{marginTop: '200px'}}>
             <p>
-              <a href="#">Home</a>
+              <a className="text-dark text-decoration-none" href="#">Home</a>
             </p>
             <p>
-              <a href="#">Shop</a>
+              <a className="text-dark text-decoration-none" href="#">Shop</a>
             </p>
           </div>
           <div className="col-9">
