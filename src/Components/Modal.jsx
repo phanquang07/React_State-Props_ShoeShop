@@ -36,12 +36,8 @@ export default class Modal extends Component {
               <table className="table">
                 <tbody>
                   <tr>
-                    <td><strong>Alias:</strong></td>
-                    <td>{content.alias}</td>
-                  </tr>
-                  <tr>
                     <td><strong>Price:</strong></td>
-                    <td>${content.price}</td>
+                    <td className="text-danger">${content.price}</td>
                   </tr>
                   <tr>
                     <td><strong>Description:</strong></td>
