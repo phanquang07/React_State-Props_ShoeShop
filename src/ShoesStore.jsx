@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import Modal from "./Components/Modal";
 import ProductList from "./Components/ProductList";
 
 export default class ShoesStore extends Component {
-  arrShoes = [
+  products = [
     {
       id: 1,
       name: "Adidas Prophere",
@@ -144,6 +145,28 @@ export default class ShoesStore extends Component {
       image: "http://svcy3.myclass.vn/images/nike-air-max-270-react.png",
     },
   ];
+
+  state = {
+    productDetail: {
+      id: 1,
+      name: "Adidas Prophere",
+      alias: "adidas-prophere",
+      price: 350,
+      description:
+        "The adidas Primeknit upper wraps the foot with a supportive fit that enhances movement.\r\n\r\n",
+      shortDescription:
+        "The midsole contains 20% more Boost for an amplified Boost feeling.\r\n\r\n",
+      quantity: 995,
+      image: "http://svcy3.myclass.vn/images/adidas-prophere.png",
+    },
+  };
+
+  showDetail = (item) => {
+    this.setState({
+      productDetail: item
+    })
+  }
+
   render() {
     return (
       <div className="container">
@@ -157,7 +180,11 @@ export default class ShoesStore extends Component {
             </p>
           </div>
           <div className="col-9">
-            <ProductList arrShoes={this.arrShoes} />
+            <ProductList
+              productsData={this.products}
+              setStateModal={this.showDetail}
+            />
+            <Modal content={this.state.productDetail} />
           </div>
         </div>
       </div>
